@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Row, Col, Button } from 'reactstrap'
 
 const style = {
   home: {
@@ -9,7 +10,7 @@ const style = {
   p: {
     color: 'red',
     fontSize: '30px',
-    margin: '0px'
+    marginTop: '0px'
   }
 }
 
@@ -17,7 +18,14 @@ class Home extends Component {
   render() {
     return (
       <div className="Home" style={style.home}>
-        <p style={style.p}>Places</p>
+        <Container>
+          <Row>
+            <Col xs={12} className="d-flex flex-column align-items-center">
+              <p className="text-center" style={style.p}>Places</p>
+              <Button color={'danger'}>Add Location</Button>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
   }
