@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import Home from './Home.js'
+import Home from './Scenes/Home.js'
 import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {

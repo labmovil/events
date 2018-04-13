@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
-import GMap from './GMap.js'
+import GMap from '../Components/GMap.js'
 
 const style = {
   home: {
