@@ -26,7 +26,7 @@ class Home extends Component {
     constructor(props) {
         super(props)
 
-        state = {
+        this.state = {
             location: {
                 lat: 0,
                 lng: 0
