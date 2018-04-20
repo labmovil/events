@@ -27,7 +27,7 @@ class Home extends Component {
   constructor(props){
     super(props)
 
-    state = {
+    this.state = {
       location: {
 
         lat: 0,
@@ -35,27 +35,37 @@ class Home extends Component {
 
       }
     }
+
+    this.handleClickAddLocation = this.handleClickAddLocation.bind(this)
+
   }
 
   handleClickAddLocation = (lat,lng) => {
+    console.log(lat,lng)
     const location = {
       lat: lat,
       lng: lng
     }
-    
+
     this.setState({
       location: location
     })
+    console.log(this.state.location)
   }
 
   render() {
+
+    const handleClickAddLocation = this.handleClickAddLocation
+
     return (
       <div className="Home" style={style.home}>
         <Container fluid>
           <Row>
             <Col xs={12} className="p-0 d-flex flex-column align-items-center">
               <p className="text-center" style={style.p}>Places</p>
-              <LocationForm />
+              <LocationForm
+                handleClickAddLocation = {handleClickAddLocation}
+              />
               <GMap
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
