@@ -24,6 +24,28 @@ const style = {
 }
 
 class Home extends Component {
+
+  constructor(props){
+    super (props)
+    this.state={
+      state: {
+        lat:0,
+        lng:0
+      }
+    }
+  }
+
+  handleClickLocation = (lat, lng) => {
+    const location = {
+      lat:lat,
+      lng:lng
+    }
+    this.setState({
+      location: location
+    })
+
+  }
+
   render() {
     return (
       <div className="Home" style={style.home}>
