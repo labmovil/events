@@ -10,7 +10,7 @@ class LocationForm extends Component {
   }
 
   handleClickAddLocation = () => {
-    this.props.handleClickAddLocation("19.4917", "-99.1337")
+    this.props.handleClickAddLocation(19.4917, -99.1337)
   }
 
   render() {

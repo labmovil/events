@@ -28,26 +28,32 @@ class Home extends Component {
     super(props)
 
     this.state = {
-      location: {
-        lat: 0,
-        lng: 0
+      locations: [
+        { lat: 19.5113713, lng: -99.1262256 },
+        { lat: 19.5102503, lng: -99.1290131 }
+      ]
       }
-    }
 
     this.handleClickAddLocation = this.handleClickAddLocation.bind(this)
   }
 
   handleClickAddLocation = (lat, lng) => {
-    const location = {
-      lat: lat,
-      lng: lng
-    }
+    const locations = this.state.locations
+    // temporal variable
+    locations.push(
+      {
+        lat: lat,
+        lng: lng
+      }
+    )
     this.setState({
-      location: location
+      locations: locations
     })
   }
 
   render() {
+
+    const { locations } = this.state
 
     const handleClickAddLocation = this.handleClickAddLocation
 
@@ -65,6 +71,7 @@ class Home extends Component {
                 loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
                 containerElement={<div style={{ width: `100%`, height: `400px` }} />}
                 mapElement={<div style={{ width: `100%`, height: `100%` }} />}
+                locations={locations}
               />
             </Col>
           </Row>
