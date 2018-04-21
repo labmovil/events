@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import LocationForm from '../Components/LocationForm.js'
 import GMap from '../Components/GMap.js'
 
@@ -28,12 +28,10 @@ class Home extends Component {
     super(props)
 
     this.state = {
-      location: {
-
-        lat: 0,
-        lng: 0
-
-      }
+      locations: [
+        {lat: 19.5113713, lng: -99.1262256},
+        {lat: 19.5102503, lng: -99.1290131}
+      ]
     }
 
     this.handleClickAddLocation = this.handleClickAddLocation.bind(this)
@@ -41,19 +39,22 @@ class Home extends Component {
   }
 
   handleClickAddLocation = (lat,lng) => {
-    console.log(lat,lng)
-    const location = {
+
+    const locations = this.state.locations
+
+    locations.push({
       lat: lat,
       lng: lng
-    }
+    })
 
     this.setState({
-      location: location
+      locations: locations
     })
-    console.log(this.state.location)
   }
 
   render() {
+
+    const { locations } = this.state
 
     const handleClickAddLocation = this.handleClickAddLocation
 
@@ -71,6 +72,7 @@ class Home extends Component {
                 loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
                 containerElement={<div style={{ width: `100%`, height: `400px` }} />}
                 mapElement={<div style={{ width: `100%`, height: `100%` }} />}
+                locations = {locations}
               />
             </Col>
           </Row>
