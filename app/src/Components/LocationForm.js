@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { Button, FormGroup, Label, Input } from 'reactstrap'
 
 class LocationForm extends Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class LocationForm extends Component {
     }
 
     handleClickAddLocation = () => {
-        this.props.handleClickAddLocation("99.33", "85.00")
+        this.props.handleClickAddLocation(19.4917, -99.1337)
     }
     render() {
         const handleClickAddLocation = this.handleClickAddLocation
