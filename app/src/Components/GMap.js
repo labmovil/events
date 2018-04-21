@@ -3,14 +3,21 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-map
 
 class GMap extends Component {
   render() {
+
+    const {locations}=this.props
+
     return (
       <div className="GMap">
         <GoogleMap
           defaultZoom={14}
           defaultCenter={{ lat: 19.5113713, lng: -99.1262256 }}
         >
-          <Marker position={{ lat: 19.5113713, lng: -99.1262256 }} />
-          <Marker position={{ lat: 19.5102503, lng: -99.1290131 }} />
+
+        {locations.map(
+          (location,index) => 
+          <Marker key={index} position={{ lat: location.lat, lng: location.lng }} />
+        )}
+
         </GoogleMap>
       </div>
     )
