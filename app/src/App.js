@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css'
 import Home from './Scenes/Home.js'
 import 'bootstrap/dist/css/bootstrap.css'
 
