@@ -67,7 +67,7 @@ class Home extends Component {
                 handleClickAddLocation={handleClickAddLocation}
               />
               <GMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDjy2r06U4hwphklPCu8IE17RggAaVXJYQ"
                 loadingElement={<div style={{ width: `100%`, height: `100%` }} />}
                 containerElement={<div style={{ width: `100%`, height: `400px` }} />}
                 mapElement={<div style={{ width: `100%`, height: `100%` }} />}
