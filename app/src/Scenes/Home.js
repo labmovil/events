@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import LocationForm from '../Components/LocationForm.js'
 import GMap from '../Components/GMap.js'
+import NavBar from '../Components/NavBar.js'
 
 const style = {
   home: {
     height: '100vh',
     backgroundColor: 'lightgreen',
-    paddingTop: '30px'
   },
   p: {
     color: 'red',
@@ -59,6 +59,7 @@ class Home extends Component {
 
     return (
       <div className="Home" style={style.home}>
+        <NavBar />
         <Container fluid>
           <Row>
             <Col xs={12} className="p-0 d-flex flex-column align-items-center">
